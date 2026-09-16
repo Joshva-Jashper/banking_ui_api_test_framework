@@ -8,6 +8,7 @@ class LoginPage:
         self.password = page.locator("#password")
         self.signInButton = page.locator('[data-test="signin-submit"]')
         self.SuccessLoginMessage = page.get_by_text("Get Started with Real World App")
+        self.invalidLoginMessage = page.get_by_text("Username or password is invalid")
 
     def SignIn(self,username,password):
         self.userName.click()
@@ -18,5 +19,9 @@ class LoginPage:
 
     def get_login_heading(self):
         return self.login_heading    
+    
     def get_success_login_message(self):
         return self.SuccessLoginMessage
+
+    def get_invalid_login_msg(self):
+        return self.invalidLoginMessage
