@@ -1,2 +1,3 @@
-tests/report/
+report/
 tests/test_ui/__pycache__/
+pages/pages_ui/__pycache__/

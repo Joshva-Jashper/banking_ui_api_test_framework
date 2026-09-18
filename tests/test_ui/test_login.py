@@ -7,6 +7,7 @@ from faker import Faker
 
 @pytest.mark.ui 
 @pytest.mark.smoke
+@pytest.mark.no_auth
 def test_login_with_valid_credentials(page:Page):
     register_page = RegisterPage(page)
     faker = Faker()
@@ -28,6 +29,7 @@ def test_login_with_valid_credentials(page:Page):
     expect(login_page.get_success_login_message()).to_contain_text("Get Started with Real World App")
 
 @pytest.mark.ui 
+@pytest.mark.no_auth
 def test_login_with_invalid_credentials(page:Page):
     login_page = LoginPage(page)
     login_page.SignIn("joshbkjcechjewnjwehj","joshva2006@")
@@ -35,6 +37,7 @@ def test_login_with_invalid_credentials(page:Page):
     expect(login_page.get_invalid_login_msg()).to_contain_text("Username or password is invalid")
 
 @pytest.mark.ui 
+@pytest.mark.no_auth
 def test_successfull_login_logout(page:Page):
     login_page = LoginPage(page)
     register_page = RegisterPage(page)
@@ -60,7 +63,7 @@ def test_successfull_login_logout(page:Page):
 
     expect(main_page.get_getStartedMsg()).to_contain_text("Get Started with Real World App")
     main_page.click_nextStartedMsg()
-    main_page.enterBankInfo(faker.bank(),faker.aba(),faker.pystr(min_chars=5,max_chars=12));
+    main_page.enterBankInfo(faker.bank(),faker.aba(),faker.pystr(min_chars=9,max_chars=12));
 
     expect(main_page.get_finishedMsg()).to_contain_text("Finished")
     main_page.click_finishedButton()

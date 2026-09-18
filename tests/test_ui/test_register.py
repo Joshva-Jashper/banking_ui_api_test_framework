@@ -6,6 +6,7 @@ from faker import Faker
 
 @pytest.mark.ui
 @pytest.mark.smoke
+@pytest.mark.no_auth
 def test_register_page(page : Page):
     register_page = RegisterPage(page)
     faker = Faker()
@@ -29,6 +30,7 @@ def test_register_page(page : Page):
 
 @pytest.mark.ui 
 @pytest.mark.xfail(reason="its successfully registering already registered user")
+@pytest.mark.no_auth
 def test_register_with_already_registered_credentials(page:Page):
     register_page = RegisterPage(page)
     faker = Faker()
