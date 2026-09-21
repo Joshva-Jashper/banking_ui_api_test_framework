@@ -17,8 +17,12 @@ class Transaction:
         self.TransactionLike = self.page.locator('[data-test^="transaction-like-button"]')
         self.TransactionLikeCount = self.page.locator('[data-test^="transaction-like-count"]')
         self.AllTransactionComments = self.page.locator('[data-test="comments-list"] li')
+        self.CurrentAccountBalance = self.page.locator('[data-test="sidenav-user-balance"]')
 
-    
+        
+
+    def GetCurrentBalance(self):
+        return self.CurrentAccountBalance
 
     def clickEveryTransaction(self):
         self.EveryTransaction.click()

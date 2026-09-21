@@ -5,5 +5,5 @@ def read_json_file(file_path):
     with open(file_path, 'r') as file:
         el = json.load(file)
         for item in el:
-            data.append(item.values())
+            data.append(tuple(item.values()))
     return data
