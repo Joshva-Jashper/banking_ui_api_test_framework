@@ -20,6 +20,7 @@ class MainPage:
         self.RoutingnumberError = self.page.locator('#bankaccount-routingNumber-input-helper-text')
         self.AccountNumberLessThenError = self.page.locator('#bankaccount-accountNumber-input-helper-text')
         self.BankNameError = self.page.locator("#bankaccount-bankName-input-helper-text")
+        self.AccountUserName = self.page.locator('[data-test="sidenav-user-full-name"]')
         
 
 
@@ -32,6 +33,9 @@ class MainPage:
 
     def get_createBankAccountMsg(self):
         return self.createBankAccountMsg
+
+    def ClickDropDown(self):
+        self.DropDownButton.click()
 
     def enterBankInfo(self,bankName,routingNumber,accountNumber):
         self.bankName.fill(bankName)
@@ -65,3 +69,6 @@ class MainPage:
 
     def GetBankNameError(self):
         return self.BankNameError
+
+    def GetAccountUserName(self):
+        return self.AccountUserName
