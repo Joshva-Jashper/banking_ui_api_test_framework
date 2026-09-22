@@ -1,0 +1,45 @@
+[
+  {
+    
+    "bankName": "JPMorgan Chase Bank",
+    "routingNumber": "021000021",
+    "accountNumber": "123456789012",
+    "status": "valid",
+    "validationError": null
+  },
+  {
+    "bankName": "Bank of America",
+    "routingNumber": "121000358",
+    "accountNumber": "9876543210",
+    "status": "valid",
+    "validationError": null
+  },
+  {
+    "bankName": "Wells Fargo",
+    "routingNumber": "121000358",
+    "accountNumber": "1234567",
+    "status": "invalid",
+    "validationError": "Must contain at least 9 digits"
+  },
+  {
+    "bankName": "Citibank",
+    "routingNumber": "121000358",
+    "accountNumber": "12345678901234",
+    "status": "invalid",
+    "validationError": "Must contain no more than 12 digits"
+  },
+  {
+    "bankName": "U.S. Bank",
+    "routingNumber": "12100024",
+    "accountNumber": "98765432101",
+    "status": "invalid",
+    "validationError": "Must contain a valid routing number"
+  },
+  {
+    "bankName": "U",
+    "routingNumber": "12100024",
+    "accountNumber": "98765432101",
+    "status": "invalid",
+    "validationError": "Must contain at least 5 characters"
+  }
+]

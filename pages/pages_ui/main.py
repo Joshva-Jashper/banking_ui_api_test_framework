@@ -12,6 +12,17 @@ class MainPage:
         self.saveBankInfo = self.page.locator('[data-test="bankaccount-submit"]')
         self.finishedMsg = self.page.get_by_text("Finished")
         self.finishedButton = self.page.locator('[data-test="user-onboarding-next"]')
+        self.DropDownButton = self.page.locator('[data-test="sidenav-toggle"]')
+        self.HomeButton = self.page.locator('[class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-13s1204-MuiTypography-root"]').nth(0)
+        self.MyAccountButton = self.page.locator('[class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-13s1204-MuiTypography-root"]').nth(1)
+        self.BankAccount = self.page.locator('[class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-13s1204-MuiTypography-root"]').nth(2)
+        self.Notification = self.page.locator('[class="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-13s1204-MuiTypography-root"]').nth(3)
+        self.RoutingnumberError = self.page.locator('#bankaccount-routingNumber-input-helper-text')
+        self.AccountNumberLessThenError = self.page.locator('#bankaccount-accountNumber-input-helper-text')
+        self.BankNameError = self.page.locator("#bankaccount-bankName-input-helper-text")
+        
+
+
 
     def get_getStartedMsg(self):
         return self.getStartedMsg
@@ -33,3 +44,24 @@ class MainPage:
 
     def click_finishedButton(self):
         self.finishedButton.click()    
+
+    def ClickHomeButton(self):
+        self.HomeButton.click()
+
+    def ClickMyAccountButton(self):
+        self.MyAccountButton.click()
+
+    def ClickBankAccount(self):
+        self.BankAccount.click()
+
+    def ClickNotificationButton(self):
+        self.Notification.click()                
+
+    def GetRoutingnumberError(self):
+        return self.RoutingnumberError
+
+    def GetAccountNumberError(self):
+        return self.AccountNumberLessThenError
+
+    def GetBankNameError(self):
+        return self.BankNameError
